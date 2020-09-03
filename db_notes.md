@@ -9,3 +9,8 @@ alter user test@'%' identified with mysql_native_password by "test";
 
 need to use tcp as well
 mysql -h localhost --protocol=tcp -u test -ptest
+
+need to grant SUPER privilege to create TRIGGER
+https://dba.stackexchange.com/questions/63404/how-to-grant-super-privilege-to-the-user
+
+can't TRUNCATE a referenced table as FK, need to use DELETE

@@ -1,0 +1,41 @@
+-- INSERT INTO
+--   team (team_name, on_call_hours)
+-- VALUES
+--   ('brain_surgeons', 40);
+-- SELECT
+--   *
+-- FROM
+--   team;
+-- INSERT INTO
+--   doctor (first_name, team_name)
+-- VALUES
+--   ('Mary', 'brain_surgeons'),
+--   ('Joe', 'brain_surgeons'),
+--   ('Harry', 'brain_surgeons'),
+--   ('Denise', 'brain_surgeons');
+-- UPDATE
+--   team,
+--   (
+--     SELECT
+--       on_call_hours total_hours
+--     FROM
+--       team
+--     WHERE
+--       team_name = 'brain_surgeons'
+--   ) t1,
+--   (
+--     SELECT
+--       COUNT(*) total_members
+--     FROM
+--       doctor
+--     WHERE
+--       team_name = 'brain_surgeons'
+--   ) t2
+-- SET
+--   average_on_call_hours = t1.total_hours / t2.total_members
+-- WHERE
+--   team_name = 'brain_surgeons';
+-- trigger + MySQL Event
+-- CREATE TRIGGER after insert/delete NEED TO GET ACCESS TO THE TEAM_NAME
+-- OLD.team_name for DELETE and NEW.team_name for INSERT 
+-- BOTH happen AFTER
